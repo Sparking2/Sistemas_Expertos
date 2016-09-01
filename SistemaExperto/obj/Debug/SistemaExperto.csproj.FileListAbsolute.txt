@@ -1,0 +1,11 @@
+C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\bin\Debug\SistemaExperto.exe.config
+C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\bin\Debug\SistemaExperto.exe
+C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\bin\Debug\SistemaExperto.pdb
+C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.csprojResolveAssemblyReference.cache
+C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.MenuPpl.resources
+C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.Properties.Resources.resources
+C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.csproj.GenerateResource.Cache
+C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.exe
+C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.pdb
+C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.Frm_Diccionario.resources
+C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.Frm_Reglas.resources
