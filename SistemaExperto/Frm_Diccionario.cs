@@ -21,7 +21,7 @@ namespace SistemaExperto
 
         private void Frm_Diccionario_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            
         }
 
         private void Frm_Diccionario_Load(object sender, EventArgs e)
