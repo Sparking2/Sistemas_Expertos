@@ -56,7 +56,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(220, 114);
+            this.ClientSize = new System.Drawing.Size(220, 211);
             this.Controls.Add(this.btn_reglas);
             this.Controls.Add(this.btn_diccionario);
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

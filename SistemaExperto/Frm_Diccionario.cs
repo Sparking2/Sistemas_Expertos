@@ -26,8 +26,27 @@ namespace SistemaExperto
 
         private void Frm_Diccionario_Load(object sender, EventArgs e)
         {
-           
+            // TODO: This line of code loads data into the 'localDBDataSet.Atomos' table. You can move, or remove it, as needed.
+            this.atomosTableAdapter.Fill(this.localDBDataSet.Atomos);
+            //Local
         }
 
+        private void atomosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.atomosBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.localDBDataSet);
+
+        }
+
+        private void btn_Agregar_Click(object sender, EventArgs e)
+        {
+            //this.atomosTableAdapter.
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

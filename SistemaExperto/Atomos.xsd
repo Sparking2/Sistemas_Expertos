@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Atomos" targetNamespace="http://tempuri.org/Atomos.xsd" xmlns:mstns="http://tempuri.org/Atomos.xsd" xmlns="http://tempuri.org/Atomos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Atomos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Atomos" msprop:Generator_UserDSName="Atomos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DiccionarioAtomos" msprop:Generator_TableClassName="DiccionarioAtomosDataTable" msprop:Generator_TableVarName="tableDiccionarioAtomos" msprop:Generator_RowChangedName="DiccionarioAtomosRowChanged" msprop:Generator_TablePropName="DiccionarioAtomos" msprop:Generator_RowDeletingName="DiccionarioAtomosRowDeleting" msprop:Generator_RowChangingName="DiccionarioAtomosRowChanging" msprop:Generator_RowEvHandlerName="DiccionarioAtomosRowChangeEventHandler" msprop:Generator_RowDeletedName="DiccionarioAtomosRowDeleted" msprop:Generator_RowClassName="DiccionarioAtomosRow" msprop:Generator_UserTableName="DiccionarioAtomos" msprop:Generator_RowEvArgName="DiccionarioAtomosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Atomo" msprop:Generator_ColumnVarNameInTable="columnAtomo" msprop:Generator_ColumnPropNameInRow="Atomo" msprop:Generator_ColumnPropNameInTable="AtomoColumn" msprop:Generator_UserColumnName="Atomo" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DiccionarioReglas" msprop:Generator_TableClassName="DiccionarioReglasDataTable" msprop:Generator_TableVarName="tableDiccionarioReglas" msprop:Generator_TablePropName="DiccionarioReglas" msprop:Generator_RowDeletingName="DiccionarioReglasRowDeleting" msprop:Generator_RowChangingName="DiccionarioReglasRowChanging" msprop:Generator_RowEvHandlerName="DiccionarioReglasRowChangeEventHandler" msprop:Generator_RowDeletedName="DiccionarioReglasRowDeleted" msprop:Generator_UserTableName="DiccionarioReglas" msprop:Generator_RowChangedName="DiccionarioReglasRowChanged" msprop:Generator_RowEvArgName="DiccionarioReglasRowChangeEvent" msprop:Generator_RowClassName="DiccionarioReglasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
+              <xs:element name="Regla" msprop:Generator_ColumnVarNameInTable="columnRegla" msprop:Generator_ColumnPropNameInRow="Regla" msprop:Generator_ColumnPropNameInTable="ReglaColumn" msprop:Generator_UserColumnName="Regla" type="xs:string" minOccurs="0" />
+              <xs:element name="ReglaSimple" msprop:Generator_ColumnVarNameInTable="columnReglaSimple" msprop:Generator_ColumnPropNameInRow="ReglaSimple" msprop:Generator_ColumnPropNameInTable="ReglaSimpleColumn" msprop:Generator_UserColumnName="ReglaSimple" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

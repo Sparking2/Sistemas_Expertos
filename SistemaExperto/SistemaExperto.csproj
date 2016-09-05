@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -61,6 +61,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Atomos.cs">
+      <DependentUpon>Atomos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Atomos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Atomos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Diccionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diccionario.Designer.cs">
+      <DependentUpon>Diccionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Atomos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Atomos.Designer.cs">
+      <DependentUpon>Frm_Atomos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,8 +99,24 @@
     <Compile Include="Frm_Reglas.Designer.cs">
       <DependentUpon>Frm_Reglas.cs</DependentUpon>
     </Compile>
+    <Compile Include="LocalDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MyData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyData.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Diccionario.resx">
+      <DependentUpon>Diccionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Atomos.resx">
+      <DependentUpon>Frm_Atomos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Diccionario.resx">
       <DependentUpon>Frm_Diccionario.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +135,39 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Atomos.xsc">
+      <DependentUpon>Atomos.xsd</DependentUpon>
+    </None>
+    <None Include="Atomos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Atomos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Atomos.xss">
+      <DependentUpon>Atomos.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDBDataSet.xsc">
+      <DependentUpon>LocalDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LocalDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LocalDBDataSet.xss">
+      <DependentUpon>LocalDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MyData.xsc">
+      <DependentUpon>MyData.xsd</DependentUpon>
+    </None>
+    <None Include="MyData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MyData.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MyData.xss">
+      <DependentUpon>MyData.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -115,7 +184,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -123,6 +192,15 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LocalDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LocalDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>LocalDB.mdf</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

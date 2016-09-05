@@ -9,3 +9,18 @@ C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\o
 C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.pdb
 C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.Frm_Diccionario.resources
 C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.Frm_Reglas.resources
+E:\Users\spark\Documents\GitHub\Sistemas_Expertos\SistemaExperto\bin\Debug\SistemaExperto.exe.config
+E:\Users\spark\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.exe
+E:\Users\spark\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.pdb
+E:\Users\spark\Documents\GitHub\Sistemas_Expertos\SistemaExperto\bin\Debug\LocalDB.mdf
+E:\Users\spark\Documents\GitHub\Sistemas_Expertos\SistemaExperto\bin\Debug\LocalDB_log.ldf
+E:\Users\spark\Documents\GitHub\Sistemas_Expertos\SistemaExperto\bin\Debug\SistemaExperto.exe
+E:\Users\spark\Documents\GitHub\Sistemas_Expertos\SistemaExperto\bin\Debug\SistemaExperto.pdb
+E:\Users\spark\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.csprojResolveAssemblyReference.cache
+E:\Users\spark\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.Frm_Diccionario.resources
+E:\Users\spark\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.MenuPpl.resources
+E:\Users\spark\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.Frm_Reglas.resources
+E:\Users\spark\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.Properties.Resources.resources
+E:\Users\spark\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.csproj.GenerateResource.Cache
+E:\Users\spark\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.Diccionario.resources
+E:\Users\spark\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.Frm_Atomos.resources

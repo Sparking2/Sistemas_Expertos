@@ -1,0 +1,23 @@
+<?xml version="1.0" standalone="yes"?>
+<Atomos xmlns="http://tempuri.org/Atomos.xsd">
+  <DiccionarioAtomos>
+    <ID>1</ID>
+    <Atomo>A</Atomo>
+  </DiccionarioAtomos>
+  <DiccionarioAtomos>
+    <ID>2</ID>
+    <Atomo>B</Atomo>
+  </DiccionarioAtomos>
+  <DiccionarioAtomos>
+    <ID>3</ID>
+    <Atomo>C</Atomo>
+  </DiccionarioAtomos>
+  <DiccionarioAtomos>
+    <ID>4</ID>
+    <Atomo>D</Atomo>
+  </DiccionarioAtomos>
+  <DiccionarioAtomos>
+    <ID>5</ID>
+    <Atomo>F</Atomo>
+  </DiccionarioAtomos>
+</Atomos>
