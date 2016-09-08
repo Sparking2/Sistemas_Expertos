@@ -131,6 +131,8 @@ namespace SistemaExperto
             String[] substrings = Frase.Split('→');
             Dictionary<int, String> Diccionario = new Dictionary<int, String>();
             String previo = substrings[0], consecuente = substrings[1];
+
+            
             /*int num_of_portions = 0;
             int contador = 0;
             int start = 0;
@@ -167,6 +169,11 @@ namespace SistemaExperto
         {
             richBox.Text = "";
             SimpleRule = "";
+        }
+
+        void Search_O(String Previo)
+        {
+
         }
 
     }
