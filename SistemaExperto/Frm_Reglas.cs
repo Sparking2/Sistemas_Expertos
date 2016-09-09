@@ -70,7 +70,7 @@ namespace SistemaExperto
             }else
             {
                 if (cBox_no.Checked) { 
-                    richBox.Text += " NO " + combo_Atom.SelectedItem;
+                    richBox.Text += " NO" + combo_Atom.SelectedItem;
                     SimpleRule += " ¬" + combo_Atom.SelectedIndex+" ";
                 }
                 else
@@ -84,13 +84,13 @@ namespace SistemaExperto
 
         private void btn_left_Click(object sender, EventArgs e)
         {
-            richBox.Text += " ( ";
+            richBox.Text += " (";
             SimpleRule += " (";
         }
 
         private void btn_right_Click(object sender, EventArgs e)
         {
-            richBox.Text += " ) ";
+            richBox.Text += " )";
             SimpleRule += " )";
         }
 
@@ -131,36 +131,22 @@ namespace SistemaExperto
             String[] substrings = Frase.Split('→');
             Dictionary<int, String> Diccionario = new Dictionary<int, String>();
             String previo = substrings[0], consecuente = substrings[1];
-
+            String[] previos = previo.Split(' ');
             
-            /*int num_of_portions = 0;
-            int contador = 0;
-            int start = 0;
-            int finish = 0;
-            char debug;
-            for(int i = 0; i < previo.Length; i++)
+            for (int i = 0; i < previos.Length; i++)
             {
-                if (previo[i] == '(')
+                if (previos[i] == " ")
                 {
-                    if (contador == 0)
-                        start = i;
-                    contador++;
+
                 }
-                finish++;
-                if (previo[i] == ')')
+                else if(previos[i] =="(")
                 {
-                    contador--;
-                    if (contador == 0) {
-                        finish = i;
-                        Diccionario.Add(num_of_portions, previo.Substring(start, finish));
-                        num_of_portions++;
-                        finish = 0;
-                    }
+                    InsertarNodo("vacio");
                 }
-                debug = previo[i];
             }
-            for(int i = 0;i < Diccionario.Count ;i++)
-                MessageBox.Show(Diccionario[i]);*/
+
+
+            MessageBox.Show(":v");
            }
 
     
@@ -171,10 +157,69 @@ namespace SistemaExperto
             SimpleRule = "";
         }
 
+
         void Search_O(String Previo)
         {
 
         }
 
+        class Nodo
+        {
+            public string info;
+            public Nodo izq, der,padre;
+        }
+
+        Nodo raiz;
+
+        public void ArbolNodos(String[] antecedente)
+        {
+            Nodo anterior = null;
+            anterior = raiz;
+            raiz = null;
+            for (int i = 0; i < antecedente.Length; i++)
+            {
+                if (antecedente[i] == " ")
+                {
+
+                } else if (antecedente[i] == "(") {
+                    Nodo nuevo = new Nodo();
+                    anterior.izq = nuevo;
+                    nuevo.padre = anterior;
+                    anterior = nuevo;
+                } else if (antecedente[i] != "(" && antecedente[i] != ")" && antecedente[i] != "^" && antecedente[i] != "v")
+                {
+                    Nodo nuevo = new Nodo();
+                    nuevo.info = antecedente[i];
+                    nuevo.izq = null;
+                    nuevo.der = null;
+                }
+            }
+        }
+
+        public void InsertarNodo(String info)
+        {
+            Nodo nuevo = new Nodo();
+            nuevo.info = info;
+            nuevo.izq = null;
+            nuevo.der = null;
+            if (raiz == null)
+                raiz = nuevo;
+            else
+            { 
+                Nodo anterior = null, reco;
+                reco = raiz;
+                while(reco != null)
+                {
+                    anterior = reco;
+                    if(info == "vacio")
+             
+                }
+               
+
+            }
+        }
+
     }
+
+
 }

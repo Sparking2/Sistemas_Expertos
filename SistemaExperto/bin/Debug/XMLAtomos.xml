@@ -18,6 +18,10 @@
   </DiccionarioAtomos>
   <DiccionarioAtomos>
     <ID>5</ID>
+    <Atomo>E</Atomo>
+  </DiccionarioAtomos>
+  <DiccionarioAtomos>
+    <ID>6</ID>
     <Atomo>F</Atomo>
   </DiccionarioAtomos>
 </Atomos>

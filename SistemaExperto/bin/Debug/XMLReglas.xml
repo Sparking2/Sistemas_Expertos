@@ -1,11 +1,15 @@
 <?xml version="1.0" standalone="yes"?>
 <Atomos xmlns="http://tempuri.org/Atomos.xsd">
   <DiccionarioReglas>
-    <Regla> (  A y B )  → C</Regla>
-    <ReglaSimple> ( 1 ^ 2 ) → 3</ReglaSimple>
+    <Regla> A y B → NO D</Regla>
+    <ReglaSimple> 1 ^ 2 → ¬4 </ReglaSimple>
   </DiccionarioReglas>
   <DiccionarioReglas>
     <Regla> (  A y B )  o C → D</Regla>
+    <ReglaSimple> ( 1 ^ 2 ) v 3 → 4</ReglaSimple>
+  </DiccionarioReglas>
+  <DiccionarioReglas>
+    <Regla> ( A y B ) o C → D</Regla>
     <ReglaSimple> ( 1 ^ 2 ) v 3 → 4</ReglaSimple>
   </DiccionarioReglas>
 </Atomos>
