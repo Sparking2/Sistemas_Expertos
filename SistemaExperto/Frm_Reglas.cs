@@ -182,10 +182,12 @@ namespace SistemaExperto
                 {
 
                 } else if (antecedente[i] == "(") {
-                    Nodo nuevo = new Nodo();
-                    anterior.izq = nuevo;
-                    nuevo.padre = anterior;
-                    anterior = nuevo;
+                    Nodo nuevoIzq = new Nodo();
+                    Nodo nuevoDer = new Nodo();
+                    anterior.izq = nuevoIzq;
+                    anterior.der = nuevoDer;
+                    nuevoIzq.padre = anterior;
+                    anterior = nuevoIzq;
                 } else if (antecedente[i] != "(" && antecedente[i] != ")" && antecedente[i] != "^" && antecedente[i] != "v")
                 {
                     Nodo nuevo = new Nodo();
@@ -211,7 +213,7 @@ namespace SistemaExperto
                 while(reco != null)
                 {
                     anterior = reco;
-                    if(info == "vacio")
+                    //f(info == "vacio")
              
                 }
                

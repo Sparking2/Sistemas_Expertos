@@ -24,3 +24,7 @@ E:\Users\spark\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\Siste
 E:\Users\spark\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.csproj.GenerateResource.Cache
 E:\Users\spark\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.Diccionario.resources
 E:\Users\spark\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.Frm_Atomos.resources
+C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.Diccionario.resources
+C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.Frm_Atomos.resources
+C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\bin\Debug\LocalDB.mdf
+C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\bin\Debug\LocalDB_log.ldf
