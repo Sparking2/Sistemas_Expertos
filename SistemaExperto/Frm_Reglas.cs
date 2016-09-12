@@ -132,20 +132,11 @@ namespace SistemaExperto
             Dictionary<int, String> Diccionario = new Dictionary<int, String>();
             String previo = substrings[0], consecuente = substrings[1];
             String[] previos = previo.Split(' ');
-            
-            for (int i = 0; i < previos.Length; i++)
-            {
-                if (previos[i] == " ")
-                {
 
-                }
-                else if(previos[i] =="(")
-                {
-                    InsertarNodo("vacio");
-                }
-            }
-
-
+            ArbolNodos(previos);
+            Nodo cosa = new Nodo();
+            cosa = raiz;
+            LeerArbol(cosa);
             MessageBox.Show(":v");
            }
 
@@ -157,15 +148,10 @@ namespace SistemaExperto
             SimpleRule = "";
         }
 
-
-        void Search_O(String Previo)
-        {
-
-        }
-
         class Nodo
         {
             public string info;
+            public List<String> HijosInfo;
             public Nodo izq, der,padre;
         }
 
@@ -174,52 +160,90 @@ namespace SistemaExperto
         public void ArbolNodos(String[] antecedente)
         {
             Nodo anterior = null;
+            raiz = new Nodo();
             anterior = raiz;
-            raiz = null;
             for (int i = 0; i < antecedente.Length; i++)
             {
-                if (antecedente[i] == " ")
+                if (antecedente[i] == "")
                 {
 
-                } else if (antecedente[i] == "(") {
+                }
+                else if (antecedente[i] == "(")
+                {
                     Nodo nuevoIzq = new Nodo();
                     Nodo nuevoDer = new Nodo();
+                    if (anterior.izq != null && anterior.der != null)
+                    {
+                        anterior = anterior.der;
+                    }
                     anterior.izq = nuevoIzq;
                     anterior.der = nuevoDer;
                     nuevoIzq.padre = anterior;
                     anterior = nuevoIzq;
-                } else if (antecedente[i] != "(" && antecedente[i] != ")" && antecedente[i] != "^" && antecedente[i] != "v")
-                {
-                    Nodo nuevo = new Nodo();
-                    nuevo.info = antecedente[i];
-                    nuevo.izq = null;
-                    nuevo.der = null;
                 }
+                else if (antecedente[i] != "(" && antecedente[i] != ")" && antecedente[i] != "^" && antecedente[i] != "v")
+                {
+                    if (anterior.izq == null)
+                    {
+                        anterior.info = antecedente[i];
+                        /*Nodo nuevo = new Nodo();
+                        anterior.izq = nuevo;
+                        nuevo.info = antecedente[i];*/
+                        anterior.izq = null;
+                        anterior.der = null;
+                        anterior = anterior.padre;
+                    }
+                    else
+                    {
+                        //Nodo nuevo = new Nodo();
+                        anterior.der.info = antecedente[i];
+                        //nuevo.info = antecedente[i];
+                        anterior.der.izq = null;
+                        anterior.der.der = null;
+                    }
+                }
+                else if (antecedente[i] == "^" || antecedente[i] == "v")
+                {
+                    anterior.info = antecedente[i];
+                }
+                else if (antecedente[i] == ")")
+                {
+                    if(anterior.padre != null)
+                        anterior = anterior.padre;
+                }
+                    
+                else if (anterior.info != null)
+                    anterior = anterior.padre;
             }
         }
 
-        public void InsertarNodo(String info)
+        private void LeerArbol(Nodo Madre)
         {
-            Nodo nuevo = new Nodo();
-            nuevo.info = info;
-            nuevo.izq = null;
-            nuevo.der = null;
-            if (raiz == null)
-                raiz = nuevo;
-            else
-            { 
-                Nodo anterior = null, reco;
-                reco = raiz;
-                while(reco != null)
+            bool disyuncion = false;
+            Madre.HijosInfo = new List<string>();
+            if (Madre.izq != null && Madre.der != null)
+            {
+                LeerArbol(Madre.izq);
+                if (Madre.info == "^")
+                    disyuncion = true;
+                LeerArbol(Madre.der);
+                if (disyuncion)
+                    foreach (String rd in Madre.izq.HijosInfo)
+                        foreach (String ri in Madre.der.HijosInfo)
+                            Madre.HijosInfo.Add(rd + ri);
+                else
                 {
-                    anterior = reco;
-                    //f(info == "vacio")
-             
+                    foreach (String rd in Madre.izq.HijosInfo)
+                        Madre.HijosInfo.Add(rd);
+                    foreach (String ri in Madre.der.HijosInfo)
+                        Madre.HijosInfo.Add(ri);
                 }
-               
-
             }
+            else
+                Madre.HijosInfo.Add(Madre.info + ",");
+            return;
         }
+
 
     }
 
