@@ -26,9 +26,9 @@ namespace SistemaExperto
 
         private void Frm_Reglas_FormClosing(object sender, FormClosingEventArgs e)
         {
-            MessageBox.Show(richBox.Text);
-            int index = combo_Atom.SelectedIndex;
-            MessageBox.Show(combo_Atom.SelectedIndex.ToString());
+            //MessageBox.Show(richBox.Text);
+            //int index = combo_Atom.SelectedIndex;
+            //MessageBox.Show(combo_Atom.SelectedIndex.ToString());
         }
 
         private void Frm_Reglas_Load(object sender, EventArgs e)
@@ -107,8 +107,7 @@ namespace SistemaExperto
             drRows["Regla"] = richBox.Text;
             drRows["ReglaSimple"] = SimpleRule;
             CreateRules(SimpleRule);
-            dtTable.Rows.Add(drRows);
-            dtTable.WriteXml(XMLlocationReglas);
+          
             Clean();
             
         }
@@ -137,7 +136,48 @@ namespace SistemaExperto
             Nodo cosa = new Nodo();
             cosa = raiz;
             LeerArbol(cosa);
-            MessageBox.Show(":v");
+            DataTable dtTable = dsAtomos.Tables["DiccionarioReglas"];
+            
+            String ReglaSimple = "";
+            String Regla = "";
+            for (int x = 0; x < raiz.HijosInfo.Count -1; x++)
+            {
+                DataRow drRows = dtTable.NewRow();
+
+                for (int i = 0; i < raiz.HijosInfo[x].Length-1; i++)
+                {
+                    if (raiz.HijosInfo[x][i] != ',')
+                    {
+                        ReglaSimple += raiz.HijosInfo[x][i];
+                    }
+                    else
+                    {
+                        ReglaSimple += "^";
+                    }
+                    
+
+                }
+                for (int i = 0; i < ReglaSimple.Length; i++)
+                {
+                    if(ReglaSimple[i] == '¬')
+                        Regla += " NO ";
+
+                    if (ReglaSimple[i] != '^' && ReglaSimple[i] != '¬')
+                        Regla += combo_Atom.Items[(int)Char.GetNumericValue(ReglaSimple[i])];                        
+    
+                    if (ReglaSimple[i] == '^')
+                        Regla += " y ";
+                }
+                ReglaSimple += "→" + consecuente;
+                Regla += " → " + combo_Atom.Items[Int32.Parse(consecuente)];
+                drRows["ReglaSimple"] = ReglaSimple;
+                drRows["Regla"] = Regla;
+                dtTable.Rows.Add(drRows);
+                dtTable.WriteXml(XMLlocationReglas);
+                ReglaSimple = "";
+                Regla = "";
+            }
+            //MessageBox.Show(":v");
            }
 
     
