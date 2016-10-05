@@ -2,26 +2,58 @@
 <Atomos xmlns="http://tempuri.org/Atomos.xsd">
   <DiccionarioAtomos>
     <ID>1</ID>
-    <Atomo>A</Atomo>
+    <Atomo>Calor</Atomo>
   </DiccionarioAtomos>
   <DiccionarioAtomos>
     <ID>2</ID>
-    <Atomo>B</Atomo>
+    <Atomo>Playa</Atomo>
   </DiccionarioAtomos>
   <DiccionarioAtomos>
     <ID>3</ID>
-    <Atomo>C</Atomo>
+    <Atomo>Huracan</Atomo>
   </DiccionarioAtomos>
   <DiccionarioAtomos>
     <ID>4</ID>
-    <Atomo>D</Atomo>
+    <Atomo>Sudas</Atomo>
   </DiccionarioAtomos>
   <DiccionarioAtomos>
     <ID>5</ID>
-    <Atomo>E</Atomo>
+    <Atomo>NubesLejos</Atomo>
   </DiccionarioAtomos>
   <DiccionarioAtomos>
     <ID>6</ID>
-    <Atomo>F</Atomo>
+    <Atomo>Viento</Atomo>
+  </DiccionarioAtomos>
+  <DiccionarioAtomos>
+    <ID>7</ID>
+    <Atomo>NubeCerca</Atomo>
+  </DiccionarioAtomos>
+  <DiccionarioAtomos>
+    <ID>8</ID>
+    <Atomo>BajaPresion</Atomo>
+  </DiccionarioAtomos>
+  <DiccionarioAtomos>
+    <ID>9</ID>
+    <Atomo>Llueve</Atomo>
+  </DiccionarioAtomos>
+  <DiccionarioAtomos>
+    <ID>10</ID>
+    <Atomo>Cubierto</Atomo>
+  </DiccionarioAtomos>
+  <DiccionarioAtomos>
+    <ID>11</ID>
+    <Atomo>Mojado</Atomo>
+  </DiccionarioAtomos>
+  <DiccionarioAtomos>
+    <ID>12</ID>
+    <Atomo>Chelas</Atomo>
+  </DiccionarioAtomos>
+  <DiccionarioAtomos>
+    <ID>13</ID>
+    <Atomo>Vacaciones</Atomo>
+  </DiccionarioAtomos>
+  <DiccionarioAtomos>
+    <ID>14</ID>
+    <Atomo>Trabajo</Atomo>
   </DiccionarioAtomos>
 </Atomos>

@@ -28,3 +28,5 @@ C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\o
 C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.Frm_Atomos.resources
 C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\bin\Debug\LocalDB.mdf
 C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\bin\Debug\LocalDB_log.ldf
+C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\bin\Debug\MySql.Data.dll
+C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\bin\Debug\MySql.Data.xml

@@ -140,7 +140,7 @@ namespace SistemaExperto
             
             String ReglaSimple = "";
             String Regla = "";
-            for (int x = 0; x < raiz.HijosInfo.Count -1; x++)
+            for (int x = 0; x < raiz.HijosInfo.Count; x++)
             {
                 DataRow drRows = dtTable.NewRow();
 
@@ -157,7 +157,8 @@ namespace SistemaExperto
                     
 
                 }
-                for (int i = 0; i < ReglaSimple.Length; i++)
+                //String[] Ruler = ReglaSimple.Split('');
+                /*for (int i = 0; i < ReglaSimple.Length; i++)
                 {
                     if(ReglaSimple[i] == '¬')
                         Regla += " NO ";
@@ -167,7 +168,7 @@ namespace SistemaExperto
     
                     if (ReglaSimple[i] == '^')
                         Regla += " y ";
-                }
+                }*/
                 ReglaSimple += "→" + consecuente;
                 Regla += " → " + combo_Atom.Items[Int32.Parse(consecuente)];
                 drRows["ReglaSimple"] = ReglaSimple;
@@ -177,7 +178,7 @@ namespace SistemaExperto
                 ReglaSimple = "";
                 Regla = "";
             }
-            //MessageBox.Show(":v");
+            MessageBox.Show(":v");
            }
 
     
@@ -244,7 +245,7 @@ namespace SistemaExperto
                 }
                 else if (antecedente[i] == "^" || antecedente[i] == "v")
                 {
-                    anterior.info = antecedente[i];
+                   anterior.info = antecedente[i];
                 }
                 else if (antecedente[i] == ")")
                 {

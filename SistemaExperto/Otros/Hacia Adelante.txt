@@ -1,0 +1,11 @@
+1.- Leer las Reglas
+2.- Leer los Atomos
+3.- Crear mis 3 Listas
+	Solo Antecedente | Antecedente y Consecuente | Solo Consecuente
+4.-Leer el primer elemento de la lista "Solo Antecedente"
+5.-Preguntarle el valor a usuario Si|No
+6.-Sustituir el valor en reglas (si un valor es = 0, se elimina la regla)
+(si valor = 1, se limpia y se deja la regla)
+7.-Se borra de la lista 
+8.-Si se queda la regla con puros unos, se guarda cuando se disparo y el valor se actualiza en todo
+ 

@@ -1,0 +1,7 @@
+<?xml version="1.0" standalone="yes"?>
+<Atomos xmlns="http://tempuri.org/Atomos.xsd">
+  <DiccionarioReglas>
+    <Regla> → Sudas</Regla>
+    <ReglaSimple>1^¬3→ 4</ReglaSimple>
+  </DiccionarioReglas>
+</Atomos>

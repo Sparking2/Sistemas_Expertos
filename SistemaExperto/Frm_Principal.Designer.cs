@@ -30,6 +30,7 @@
         {
             this.btn_diccionario = new System.Windows.Forms.Button();
             this.btn_reglas = new System.Windows.Forms.Button();
+            this.btn_delante = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_diccionario
@@ -52,11 +53,22 @@
             this.btn_reglas.UseVisualStyleBackColor = true;
             this.btn_reglas.Click += new System.EventHandler(this.btn_reglas_Click);
             // 
+            // btn_delante
+            // 
+            this.btn_delante.Location = new System.Drawing.Point(66, 108);
+            this.btn_delante.Name = "btn_delante";
+            this.btn_delante.Size = new System.Drawing.Size(90, 43);
+            this.btn_delante.TabIndex = 2;
+            this.btn_delante.Text = "Adelante";
+            this.btn_delante.UseVisualStyleBackColor = true;
+            this.btn_delante.Click += new System.EventHandler(this.btn_delante_Click);
+            // 
             // MenuPpl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(220, 211);
+            this.Controls.Add(this.btn_delante);
             this.Controls.Add(this.btn_reglas);
             this.Controls.Add(this.btn_diccionario);
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -74,6 +86,7 @@
 
         private System.Windows.Forms.Button btn_diccionario;
         private System.Windows.Forms.Button btn_reglas;
+        private System.Windows.Forms.Button btn_delante;
     }
 }
 
