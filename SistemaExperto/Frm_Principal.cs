@@ -18,8 +18,8 @@ namespace SistemaExperto
         Atomos dsAtomos = new Atomos();
         //String connectionString = "server=localhost;database=testDB;uid=root;pwd=123456";
         //MySqlConnection cnn = new MySqlConnection(connectionString);
-        String XMLlocationAtomos = Application.StartupPath + @"\XMLAtomos.xml";
-        String XMLlocationReglas = Application.StartupPath + @"\XMLReglas.xml";
+        //String XMLlocationAtomos = Application.StartupPath + @"\XMLAtomos.xml";
+        //String XMLlocationReglas = Application.StartupPath + @"\XMLReglas.xml";
         public MenuPpl()
         {
             InitializeComponent();
@@ -51,17 +51,6 @@ namespace SistemaExperto
 
         private void MenuPpl_Load(object sender, EventArgs e)
         {
-            String conectionSrtring = "server=localhost;database=testDB;uid=root;pwd=123456";
-            MySqlConnection cnn = new MySqlConnection(conectionSrtring);
-            try
-            {
-                cnn.Open();
-                
-            }
-            catch (Exception ex)
-            {
-
-            }
             /*if (!File.Exists(XMLlocationAtomos))
             {
                 MessageBox.Show("No existe el Archivo de Atomos, Creando");

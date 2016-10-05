@@ -30,3 +30,5 @@ C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\b
 C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\bin\Debug\LocalDB_log.ldf
 C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\bin\Debug\MySql.Data.dll
 C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\bin\Debug\MySql.Data.xml
+E:\Users\spark\Documents\GitHub\Sistemas_Expertos\SistemaExperto\bin\Debug\MySql.Data.xml
+E:\Users\spark\Documents\GitHub\Sistemas_Expertos\SistemaExperto\bin\Debug\MySql.Data.dll

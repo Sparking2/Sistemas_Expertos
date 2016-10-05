@@ -1,0 +1,13 @@
+/*create table Reglas
+(
+id int not null primary key auto_increment,
+Regla text not null,
+Implica text not null
+);
+
+/*create table Atomos
+(
+id int not null primary key auto_increment,
+Atomo text not null
+);
+*/

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace SistemaExperto
 {
@@ -33,21 +34,28 @@ namespace SistemaExperto
 
         private void Frm_Reglas_Load(object sender, EventArgs e)
         {
-            dsAtomos.ReadXml(XMLlocationAtomos);
             combo_Atom.Items.Add("Selecciona un Atomo");
-            combo_Atom.SelectedIndex = 0;
-            for(int i = 0; i < dsAtomos.Tables["DiccionarioAtomos"].Rows.Count; i++)
-            {
-                combo_Atom.Items.Add(dsAtomos.Tables["DiccionarioAtomos"].Rows[i]["Atomo"].ToString());
-            }
-            dsAtomos.ReadXml(XMLlocationReglas);
-            for (int i = 0; i < dsAtomos.Tables["DiccionarioReglas"].Rows.Count; i++)
-            {
-                richRules.Text += dsAtomos.Tables["DiccionarioReglas"].Rows[i]["Regla"].ToString();
-                richRules.Text += "\n";
+            combo_Atom.SelectedIndex=0;
+            string sql = "SELECT * FROM atomos";
+            MySqlConnection con = new MySqlConnection("server=localhost;database=testDB;uid=root;pwd=123456");
+            MySqlCommand cmd = new MySqlCommand(sql, con);
 
+            try
+            {
+                con.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    combo_Atom.Items.Add(reader.GetString("Atomo"));
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo conectar!! :C " + ex.ToString());
             }
 
+            Clean();
         }
 
         private void implies_Click(object sender, EventArgs e)
@@ -70,8 +78,8 @@ namespace SistemaExperto
             }else
             {
                 if (cBox_no.Checked) { 
-                    richBox.Text += " NO" + combo_Atom.SelectedItem;
-                    SimpleRule += " ¬" + combo_Atom.SelectedIndex+" ";
+                    richBox.Text += " no " + combo_Atom.SelectedItem;
+                    SimpleRule += " -" + combo_Atom.SelectedIndex+" ";
                 }
                 else
                 { 
@@ -102,6 +110,29 @@ namespace SistemaExperto
 
         private void btn_Regla_Click(object sender, EventArgs e)
         {
+
+            String conectionSrtring = "server=localhost;database=testDB;uid=root;pwd=123456";
+            MySqlConnection cnn = new MySqlConnection(conectionSrtring);
+            string commandLine = @"insert reglas (Regla,Implica) values (@valor1,@valor2)";
+            String[] cosa = richBox.Text.Split('→');
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = cnn;
+                cmd.Connection.Open();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = commandLine;
+                cmd.Parameters.AddWithValue("@valor1", cosa[0].ToString());
+                cmd.Parameters.AddWithValue("@valor2", cosa[1].ToString());
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo conectar!! :C" + " " + ex.ToString());
+            }
+            Clean();
+            /*
             DataTable dtTable = dsAtomos.Tables["DiccionarioReglas"];
             DataRow drRows = dtTable.NewRow();
             drRows["Regla"] = richBox.Text;
@@ -109,7 +140,7 @@ namespace SistemaExperto
             CreateRules(SimpleRule);
           
             Clean();
-            
+            */
         }
 
         void Clean()
@@ -117,12 +148,25 @@ namespace SistemaExperto
             richBox.Text = "";
             richRules.Text = "";
             SimpleRule = "";
-            for (int i = 0; i < dsAtomos.Tables["DiccionarioReglas"].Rows.Count; i++)
-            {
-                richRules.Text += dsAtomos.Tables["DiccionarioReglas"].Rows[i]["Regla"].ToString();
-                richRules.Text += "\n";
 
+            string sql = "SELECT * FROM reglas";
+            MySqlConnection con = new MySqlConnection("server=localhost;database=testDB;uid=root;pwd=123456");
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            try
+            {
+                con.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    richRules.Text += reader.GetString("Regla") + " → " + reader.GetString("Implica") + "\n";
+                }
+                con.Close();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo conectar!! :C " + ex.ToString());
+            }
+            
         }
 
         void CreateRules(String Frase)
