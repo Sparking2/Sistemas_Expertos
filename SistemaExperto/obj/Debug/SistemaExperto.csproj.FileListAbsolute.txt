@@ -33,3 +33,4 @@ C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\b
 E:\Users\spark\Documents\GitHub\Sistemas_Expertos\SistemaExperto\bin\Debug\MySql.Data.xml
 E:\Users\spark\Documents\GitHub\Sistemas_Expertos\SistemaExperto\bin\Debug\MySql.Data.dll
 C:\Users\Fam. Cortes Marquez\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.delante.resources
+E:\Users\spark\Documents\GitHub\Sistemas_Expertos\SistemaExperto\obj\Debug\SistemaExperto.delante.resources

@@ -66,7 +66,7 @@ namespace SistemaExperto
 
         private void btn_Y_Click(object sender, EventArgs e)
         {
-            richBox.Text += " y";
+            richBox.Text += " &";
             SimpleRule += " ^";
         }
 
