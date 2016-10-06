@@ -118,6 +118,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="delante.resx">
+      <DependentUpon>delante.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Diccionario.resx">
       <DependentUpon>Diccionario.cs</DependentUpon>
     </EmbeddedResource>
