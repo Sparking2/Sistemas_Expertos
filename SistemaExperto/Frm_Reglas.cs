@@ -329,7 +329,10 @@ namespace SistemaExperto
             return;
         }
 
+        private void cBox_no_CheckedChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 
 

@@ -1,0 +1,15 @@
+E:\Users\spark\Desktop\SistemaExperto\SistemaExperto\bin\Release\SistemaExperto.exe.config
+E:\Users\spark\Desktop\SistemaExperto\SistemaExperto\bin\Release\SistemaExperto.exe
+E:\Users\spark\Desktop\SistemaExperto\SistemaExperto\bin\Release\SistemaExperto.pdb
+E:\Users\spark\Desktop\SistemaExperto\SistemaExperto\bin\Release\MySql.Data.dll
+E:\Users\spark\Desktop\SistemaExperto\SistemaExperto\bin\Release\MySql.Data.xml
+E:\Users\spark\Desktop\SistemaExperto\SistemaExperto\obj\Release\SistemaExperto.csprojResolveAssemblyReference.cache
+E:\Users\spark\Desktop\SistemaExperto\SistemaExperto\obj\Release\SistemaExperto.Adelante.resources
+E:\Users\spark\Desktop\SistemaExperto\SistemaExperto\obj\Release\SistemaExperto.Atras.resources
+E:\Users\spark\Desktop\SistemaExperto\SistemaExperto\obj\Release\SistemaExperto.Diccionario.resources
+E:\Users\spark\Desktop\SistemaExperto\SistemaExperto\obj\Release\SistemaExperto.Form1.resources
+E:\Users\spark\Desktop\SistemaExperto\SistemaExperto\obj\Release\SistemaExperto.Properties.Resources.resources
+E:\Users\spark\Desktop\SistemaExperto\SistemaExperto\obj\Release\SistemaExperto.Reglas.resources
+E:\Users\spark\Desktop\SistemaExperto\SistemaExperto\obj\Release\SistemaExperto.csproj.GenerateResource.Cache
+E:\Users\spark\Desktop\SistemaExperto\SistemaExperto\obj\Release\SistemaExperto.exe
+E:\Users\spark\Desktop\SistemaExperto\SistemaExperto\obj\Release\SistemaExperto.pdb

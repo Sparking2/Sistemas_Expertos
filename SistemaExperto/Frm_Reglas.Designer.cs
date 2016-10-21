@@ -99,6 +99,7 @@
             this.cBox_no.TabIndex = 0;
             this.cBox_no.Text = "No";
             this.cBox_no.UseVisualStyleBackColor = true;
+            this.cBox_no.CheckedChanged += new System.EventHandler(this.cBox_no_CheckedChanged);
             // 
             // implies
             // 
