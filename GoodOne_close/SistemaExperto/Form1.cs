@@ -52,5 +52,11 @@ namespace SistemaExperto
             Adelante nuevo = new Adelante();
             nuevo.Show();
         }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            Atras nuevo = new Atras();
+            nuevo.Show();
+        }
     }
 }

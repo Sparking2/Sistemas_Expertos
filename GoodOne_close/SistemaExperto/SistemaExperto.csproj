@@ -53,6 +53,12 @@
     <Compile Include="Adelante.Designer.cs">
       <DependentUpon>Adelante.cs</DependentUpon>
     </Compile>
+    <Compile Include="Atras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Atras.Designer.cs">
+      <DependentUpon>Atras.cs</DependentUpon>
+    </Compile>
     <Compile Include="Diccionario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     </Compile>
     <EmbeddedResource Include="Adelante.resx">
       <DependentUpon>Adelante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Atras.resx">
+      <DependentUpon>Atras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Diccionario.resx">
       <DependentUpon>Diccionario.cs</DependentUpon>
