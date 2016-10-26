@@ -58,5 +58,11 @@ namespace SistemaExperto
             Atras nuevo = new Atras();
             nuevo.Show();
         }
+
+        private void btnObjetivos_Click(object sender, EventArgs e)
+        {
+            Objetivos nuevo = new Objetivos();
+            nuevo.Show();
+        }
     }
 }

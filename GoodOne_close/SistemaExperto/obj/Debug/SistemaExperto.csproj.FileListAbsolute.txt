@@ -41,3 +41,4 @@ E:\Users\spark\Documents\GitHub\Sistemas_Expertos\GoodOne_close\SistemaExperto\o
 E:\Users\spark\Documents\GitHub\Sistemas_Expertos\GoodOne_close\SistemaExperto\obj\Debug\SistemaExperto.Reglas.resources
 E:\Users\spark\Documents\GitHub\Sistemas_Expertos\GoodOne_close\SistemaExperto\obj\Debug\SistemaExperto.csproj.GenerateResource.Cache
 E:\Users\spark\Documents\GitHub\Sistemas_Expertos\GoodOne_close\SistemaExperto\obj\Debug\SistemaExperto.Atras.resources
+E:\Users\spark\Documents\GitHub\Sistemas_Expertos\GoodOne_close\SistemaExperto\obj\Debug\SistemaExperto.Objetivos.resources

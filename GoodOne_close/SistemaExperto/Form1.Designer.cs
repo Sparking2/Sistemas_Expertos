@@ -32,6 +32,7 @@
             this.btnReglas = new System.Windows.Forms.Button();
             this.btnAdelante = new System.Windows.Forms.Button();
             this.btnAtras = new System.Windows.Forms.Button();
+            this.btnObjetivos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDiccionario
@@ -74,11 +75,22 @@
             this.btnAtras.UseVisualStyleBackColor = true;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
+            // btnObjetivos
+            // 
+            this.btnObjetivos.Location = new System.Drawing.Point(55, 206);
+            this.btnObjetivos.Name = "btnObjetivos";
+            this.btnObjetivos.Size = new System.Drawing.Size(167, 43);
+            this.btnObjetivos.TabIndex = 4;
+            this.btnObjetivos.Text = "Objetivos";
+            this.btnObjetivos.UseVisualStyleBackColor = true;
+            this.btnObjetivos.Click += new System.EventHandler(this.btnObjetivos_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.btnObjetivos);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.btnAdelante);
             this.Controls.Add(this.btnReglas);
@@ -96,6 +108,7 @@
         private System.Windows.Forms.Button btnReglas;
         private System.Windows.Forms.Button btnAdelante;
         private System.Windows.Forms.Button btnAtras;
+        private System.Windows.Forms.Button btnObjetivos;
     }
 }
 
