@@ -29,7 +29,7 @@ namespace SistemaExperto
             string sql = "SELECT * FROM diccionario";
             MySqlConnection con = new MySqlConnection("server=localhost;database=expertodb;uid=root;pwd=123456");
             MySqlCommand cmd = new MySqlCommand(sql, con);
-
+            Atomos.Add("Basura**");
             try
             {
                 con.Open();
@@ -106,18 +106,40 @@ namespace SistemaExperto
         public int Ubicación = 0;
         private void GenerarLista()
         {
+
             for (int i = 0; i < Matrix2.Count; i++)
             {
-                if (Matrix2[i].Exists(a => a == Busqueda[Ubicación]))
+                try
                 {
-                    foreach (var item in Matrix2[i])
+                    if (Matrix2[i].Exists(a => a == Busqueda[Ubicación]))
                     {
-                        if (!Busqueda.Exists(a => a == item))
+                        foreach (var item in Matrix2[i])
                         {
-                            Busqueda.Add(item * -1);
+                            if (!Busqueda.Exists(a => a == item * -1))
+                            {
+                                if (item != Busqueda[Ubicación])
+                                    Busqueda.Add(item * -1);
+                            }
                         }
+                        Matrix2.RemoveAt(i);
+                        i = -1;
                     }
-                    Matrix2.RemoveAt(i);
+                }
+                catch (Exception ex)
+                {
+                    if (Matrix2[i].Exists(a => a == Busqueda[Ubicación - 1]))
+                    {
+                        foreach (var item in Matrix2[i])
+                        {
+                            if (!Busqueda.Exists(a => a == item * -1))
+                            {
+                                if (item != Busqueda[Ubicación])
+                                    Busqueda.Add(item * -1);
+                            }
+                        }
+                        Matrix2.RemoveAt(i);
+                        i = -1;
+                    }
                 }
 
             }
@@ -128,7 +150,8 @@ namespace SistemaExperto
             }
             else
             {
-                MessageBox.Show("Listo");
+                Ubicación = Busqueda.Count;
+                //MessageBox.Show("Preguntas Re-planteadas");
                 Ubicación--;
                 btnSI.Enabled = true;
                 btnNo.Enabled = true;
@@ -150,7 +173,11 @@ namespace SistemaExperto
             {
                 atomo = Busqueda[Ubicación];
             }
+
+            
+
             lblPregunta.Text = "Hay o Tienes " + Atomos.ElementAt(atomo);
+            Resultado();
         }
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void btnSI_Click(object sender, EventArgs e)
@@ -160,17 +187,21 @@ namespace SistemaExperto
                 if (Lista.Exists(a=>a==atomo))
                 {
                     Lista.Clear();
+
                 }
                 else if (Lista.Exists(a=>a==atomo * -1))
                 {
                     
                     var asd = Lista.IndexOf(atomo * -1);
-                    Lista[asd] = 0;
+                    Lista.RemoveAt(asd);
                 }
             }
+            //Ubicación--;
             Verificar();
-            Busqueda.RemoveAt(Ubicación);
-            Ubicación--;
+            Busqueda.Remove(atomo);
+           Ubicación--;
+            if (Busqueda.Count == 3)
+                Ubicación++;
             Preguntar();
         }
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -178,26 +209,33 @@ namespace SistemaExperto
         {
             int control = 0;
             control = Matrix.Count;
-            for(int i = 0; i < control; i++)
-            { 
-                if(Matrix[i].Count == 0)
+            for (int i = 0; i < control; i++)
+            {
+                if (Matrix[i].Count == 0)
                 {
                     Matrix.RemoveAt(i);
                     control = Matrix.Count;
                     i = 0;
+                    Matrix2.Clear();
+                    Matrix.ForEach((item) =>
+                    {
+                        Matrix2.Add((item));
+                    });
+                    Busqueda.Clear();
+                    Busqueda.Add(Objetivo);
+                    Busqueda.Add(Objetivo * -1);
+                    Ubicación = 0;
+                    GenerarLista();
                 }
             }
             control = Matrix.Count;
             for(int i = 0; i < control; i++)
             {
-                int qwe = 0;
-                foreach (var item in Matrix[i])
-                {
-                    if(item == 0)
+                    if(Matrix[i].Count == 1)
                     {
-                        //PENDIENTE!!!! se la debo de pasar a verificar ver si se disparo algo
+                    Disparado(Matrix[i][0]);
+                    control = Matrix.Count;
                     }
-                }
             }
 
         }
@@ -208,13 +246,13 @@ namespace SistemaExperto
             {
                 if (Lista.Exists(a => a == atomo))
                 {
-                    var asd = Lista.IndexOf(atomo * -1);
-                    Lista[asd] = 0;
-                    
+                    var asd = Lista.IndexOf(atomo);
+                    Lista.RemoveAt(asd);                    
                 }
                 else if (Lista.Exists(a => a == atomo * -1))
                 {
                     Lista.Clear();
+
                 }
             }
             Verificar();
@@ -223,11 +261,29 @@ namespace SistemaExperto
             Preguntar();
         }
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        private void Disparado()
+        private void Disparado(int bala)
         {
-
+            atomo = bala;
+            Ubicación++;
+            //Busqueda.Remove(atomo);
+            btnSI.PerformClick();
+            //MessageBox.Show("Ya se disparo " + bala );
         }
-        
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        private void Resultado()
+        {
+            if(Busqueda.Count == 1 || Matrix[0].Count == 1)
+            {
+                MessageBox.Show(Atomos[Objetivo] + " es Verdadero");
+                 
+            }
+            if(Matrix.Count == 0)
+            {
+                MessageBox.Show(Atomos[Objetivo] + " es falso");
+            }
+        }
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
 }
 
