@@ -20,6 +20,7 @@ namespace SistemaExperto
         List<int> soloAntecedentes = new List<int>();
         List<int> Ambos = new List<int>();
         List<int> explicación = new List<int>();
+        string explicacion = "";
 
         public Adelante()
         {
@@ -144,9 +145,9 @@ namespace SistemaExperto
                     var cosa = consecuentes.ElementAt(asd);
                     if (soloConsecuentes.Exists(a=>a==cosa) || soloConsecuentes.Exists(a=>a==-cosa)) { 
                         if(Math.Sign(cosa) == -1)
-                            MessageBox.Show("Se determino que no " + Atomos[Math.Abs(cosa)] + " es lo que sucede");
+                            MessageBox.Show("Se determino que no " + Atomos[Math.Abs(cosa)] + " es lo que sucede por " + explicacion);
                         else
-                                MessageBox.Show("Se determino que " + Atomos[cosa] + " es lo que sucede");
+                                MessageBox.Show("Se determino que " + Atomos[cosa] + " es lo que sucede por " + explicacion);
                     }
                     Matrix.RemoveAt(asd);
                     consecuentes.RemoveAt(asd);
@@ -161,7 +162,9 @@ namespace SistemaExperto
 
         void DijoSi()
         {
+
             var index = Atomos.FindIndex(a => a == lblAtomo.Text);
+            explicacion += " dijiste que es verdadero " + Atomos[index] + ", ";
             for (int i = 0; i < Matrix.Count; i++)
             {
                 //var index = Atomos.FindIndex(a => a == lblAtomo.Text);
@@ -210,6 +213,7 @@ namespace SistemaExperto
         private void btnNO_Click(object sender, EventArgs e)
         {
             var index = Atomos.FindIndex(a => a == lblAtomo.Text);
+            explicacion += " dijiste que era falso " + Atomos[index] + ", ";
             for (int i = 0; i < Matrix.Count; i++)
             {
                 //var index = Atomos.FindIndex(a => a == lblAtomo.Text);

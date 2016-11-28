@@ -164,15 +164,30 @@ namespace SistemaExperto
         int atomo;
         private void Preguntar()
         {
-            
-            if (Math.Sign(Busqueda[Ubicación]) == -1 )
+            try
             {
-                atomo = Busqueda[Ubicación] * -1;
+                if (Math.Sign(Busqueda[Ubicación]) == -1)
+                {
+                    atomo = Busqueda[Ubicación] * -1;
+                }
+                else
+                {
+                    atomo = Busqueda[Ubicación];
+                }
             }
-            else
+            catch (Exception ex)
             {
-                atomo = Busqueda[Ubicación];
+                Ubicación = Busqueda.Count - 1;
+                if (Math.Sign(Busqueda[Ubicación]) == -1)
+                {
+                    atomo = Busqueda[Ubicación] * -1;
+                }
+                else
+                {
+                    atomo = Busqueda[Ubicación];
+                }
             }
+
 
             
 
@@ -202,6 +217,7 @@ namespace SistemaExperto
            Ubicación--;
             if (Busqueda.Count == 3)
                 Ubicación++;
+            //Resultado();
             Preguntar();
         }
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -216,16 +232,6 @@ namespace SistemaExperto
                     Matrix.RemoveAt(i);
                     control = Matrix.Count;
                     i = 0;
-                    Matrix2.Clear();
-                    Matrix.ForEach((item) =>
-                    {
-                        Matrix2.Add((item));
-                    });
-                    Busqueda.Clear();
-                    Busqueda.Add(Objetivo);
-                    Busqueda.Add(Objetivo * -1);
-                    Ubicación = 0;
-                    GenerarLista();
                 }
             }
             control = Matrix.Count;
@@ -236,6 +242,27 @@ namespace SistemaExperto
                     Disparado(Matrix[i][0]);
                     control = Matrix.Count;
                     }
+            }
+            int existe = 0;
+            for(int i = 0;i < Busqueda.Count;i++)
+            {
+                foreach (var Lista in Matrix)
+                {
+                    if(Lista.Exists(a => a == Busqueda[i]))
+                    {
+                        existe++;
+                    }
+                }
+                if(existe != 0)
+                {
+                    existe = 0;
+                }
+                else
+                {
+                    Busqueda.Remove(Busqueda[i]);
+                    i = 0;
+                }
+                
             }
 
         }
@@ -256,7 +283,8 @@ namespace SistemaExperto
                 }
             }
             Verificar();
-            Busqueda.RemoveAt(Ubicación);
+            Busqueda.Remove(atomo);
+            Busqueda.Remove(atomo * -1);
             Ubicación--;
             Preguntar();
         }
@@ -273,15 +301,38 @@ namespace SistemaExperto
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void Resultado()
         {
-            if(Busqueda.Count == 1 || Matrix[0].Count == 1)
+            if (Matrix.Count == 1)
             {
-                MessageBox.Show(Atomos[Objetivo] + " es Verdadero");
-                 
+                if (Matrix[0].Count < 2)
+                {
+                    var asd = Matrix[0][0];
+                    if(Math.Sign(asd) == -1)
+                    {
+                        MessageBox.Show("Se llego a una conclusión que" + Atomos[Math.Abs(asd)] + " es falso");
+                        lblPregunta.Text = "";
+                        btnSI.Enabled = false;
+                        btnNo.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se llego a una conclusión que" + Atomos[Math.Abs(asd)] + " es verdadero");
+                        lblPregunta.Text = "";
+                        btnSI.Enabled = false;
+                        btnNo.Enabled = false;
+                    }
+                    
+                }
+                    
             }
-            if(Matrix.Count == 0)
+            else if (Matrix.Count == 0)
             {
-                MessageBox.Show(Atomos[Objetivo] + " es falso");
+                MessageBox.Show("NO se pudo concluir nada, se eliminaron todas las posibilidades");
+                lblPregunta.Text = "";
+                btnSI.Enabled = false;
+                btnNo.Enabled = false;
             }
+                  
+          
         }
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
